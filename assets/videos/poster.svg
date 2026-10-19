@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" fill="none">
+  <defs>
+    <linearGradient id="background" x1="80" y1="40" x2="1180" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#17243A"/>
+      <stop offset=".52" stop-color="#0B101C"/>
+      <stop offset="1" stop-color="#101B2B"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="matrix(0 390 -530 0 640 360)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00D2FF" stop-opacity=".15"/>
+      <stop offset="1" stop-color="#00D2FF" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" stroke="#94A3B8" stroke-opacity=".07"/>
+    </pattern>
+    <linearGradient id="node" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#172C40"/>
+      <stop offset="1" stop-color="#111C2D"/>
+    </linearGradient>
+    <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+
+  <path fill="url(#background)" d="M0 0h1280v720H0z"/>
+  <path fill="url(#glow)" d="M0 0h1280v720H0z"/>
+  <path fill="url(#grid)" d="M0 0h1280v720H0z"/>
+  <ellipse cx="640" cy="380" fill="#00D2FF" fill-opacity=".12" filter="url(#shadow)" rx="210" ry="90"/>
+
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="70" y="58" width="34" height="34" rx="9" fill="#00D2FF" fill-opacity=".14" stroke="#00D2FF" stroke-opacity=".5"/>
+    <path d="M79 68h16v14H79zM83 64h16v14" stroke="#00D2FF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <text x="119" y="82" fill="#F1F5F9" font-size="18" font-weight="700" letter-spacing="3">ARQLAB</text>
+    <text x="1210" y="81" fill="#94A3B8" font-size="13" letter-spacing="2" text-anchor="end">FUNDAMENTOS DE SOFTWARE</text>
+
+    <text x="640" y="166" fill="#F1F5F9" font-size="44" font-weight="700" letter-spacing="1" text-anchor="middle">DOS ARQUITECTURAS.</text>
+    <text x="640" y="211" fill="#00D2FF" font-size="27" font-weight="600" letter-spacing="5" text-anchor="middle">DOS FORMAS DE CONSTRUIR</text>
+
+    <text x="165" y="284" fill="#94A3B8" font-size="15" font-weight="700" letter-spacing="3">MONOLITO</text>
+    <text x="1115" y="284" fill="#94A3B8" font-size="15" font-weight="700" letter-spacing="3" text-anchor="end">DESACOPLADA</text>
+
+    <rect x="165" y="310" width="380" height="204" rx="18" fill="#00D2FF" fill-opacity=".035" stroke="#00D2FF" stroke-opacity=".68" stroke-width="2"/>
+    <rect x="181" y="326" width="348" height="172" rx="11" fill="url(#node)" stroke="#00D2FF" stroke-opacity=".24"/>
+    <path d="M297 326v172M413 326v172" stroke="#00D2FF" stroke-opacity=".25"/>
+    <g fill="#00D2FF">
+      <rect x="228" y="365" width="22" height="20" rx="3" fill-opacity=".16" stroke="#00D2FF"/>
+      <rect x="235" y="360" width="22" height="20" rx="3" fill-opacity=".16" stroke="#00D2FF"/>
+      <path d="M348 367h17v17h-17zM352 362h9v5h-9zM348 390h17v3h-17z" fill-opacity=".2" stroke="#00D2FF" stroke-linejoin="round"/>
+      <ellipse cx="467" cy="365" rx="11" ry="5" fill-opacity=".2" stroke="#00D2FF"/>
+      <path d="M456 365v19c0 3 5 6 11 6s11-3 11-6v-19M456 374c0 3 5 6 11 6s11-3 11-6" stroke="#00D2FF" stroke-width="2"/>
+    </g>
+    <text x="239" y="428" fill="#F1F5F9" font-size="17" font-weight="600" text-anchor="middle">UI</text>
+    <text x="355" y="428" fill="#F1F5F9" font-size="17" font-weight="600" text-anchor="middle">LÓGICA</text>
+    <text x="471" y="428" fill="#F1F5F9" font-size="17" font-weight="600" text-anchor="middle">DATOS</text>
+    <text x="355" y="470" fill="#94A3B8" font-size="13" letter-spacing="2" text-anchor="middle">UNA SOLA APLICACIÓN</text>
+
+    <circle cx="640" cy="408" r="35" fill="#0B0F19" stroke="#00D2FF" stroke-opacity=".55"/>
+    <text x="640" y="416" fill="#00D2FF" font-size="21" font-weight="700" text-anchor="middle">VS</text>
+    <path d="M565 408h35M680 408h35" stroke="#00D2FF" stroke-opacity=".55" stroke-dasharray="4 7" stroke-width="2"/>
+
+    <g stroke="#00D2FF" stroke-opacity=".65" stroke-width="2">
+      <path d="M790 409h44M956 409h43"/>
+      <path d="m828 404 7 5-7 5M993 404l6 5-6 5" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <g>
+      <rect x="720" y="345" width="110" height="128" rx="14" fill="url(#node)" stroke="#00D2FF" stroke-opacity=".72" stroke-width="2"/>
+      <rect x="840" y="345" width="110" height="128" rx="14" fill="url(#node)" stroke="#00D2FF" stroke-opacity=".72" stroke-width="2"/>
+      <rect x="1005" y="345" width="110" height="128" rx="14" fill="url(#node)" stroke="#00D2FF" stroke-opacity=".72" stroke-width="2"/>
+      <path d="M766 376v24M754 388h24M886 376v24M874 388h24M1051 376v24M1039 388h24" stroke="#00D2FF" stroke-linecap="round" stroke-width="2"/>
+      <circle cx="766" cy="388" r="17" stroke="#00D2FF" stroke-opacity=".45"/>
+      <circle cx="886" cy="388" r="17" stroke="#00D2FF" stroke-opacity=".45"/>
+      <circle cx="1051" cy="388" r="17" stroke="#00D2FF" stroke-opacity=".45"/>
+    </g>
+    <text x="775" y="436" fill="#F1F5F9" font-size="15" font-weight="600" text-anchor="middle">UI</text>
+    <text x="895" y="436" fill="#F1F5F9" font-size="13" font-weight="600" text-anchor="middle">LÓGICA</text>
+    <text x="1060" y="436" fill="#F1F5F9" font-size="15" font-weight="600" text-anchor="middle">DATOS</text>
+    <text x="917" y="510" fill="#94A3B8" font-size="13" letter-spacing="2" text-anchor="middle">SERVICIOS INDEPENDIENTES</text>
+
+    <path d="M70 602h1140" stroke="#94A3B8" stroke-opacity=".18"/>
+    <text x="70" y="641" fill="#00D2FF" font-size="13" font-weight="700" letter-spacing="3">VIDEO EXPLICATIVO</text>
+    <text x="1210" y="641" fill="#94A3B8" font-size="13" letter-spacing="3" text-anchor="end">PRÓXIMAMENTE</text>
+  </g>
+</svg>

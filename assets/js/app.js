@@ -50,4 +50,31 @@ architectureButtons.forEach((button) => {
       architectureButton.setAttribute("aria-pressed", String(isSelected));
     });
   });
+
+  document.querySelectorAll(".quiz-option").forEach((button) => {
+    button.addEventListener("click", () => {
+      const quizId = button.dataset.quiz;
+      const quizOptions = document.querySelectorAll(`.quiz-option[data-quiz="${quizId}"]`);
+      const feedback = document.querySelector(`[data-feedback="${quizId}"]`);
+      const isCorrect = button.dataset.correct === "true";
+
+      quizOptions.forEach((option) => {
+        option.classList.remove("is-correct", "is-incorrect");
+        option.setAttribute("aria-pressed", String(option === button));
+      });
+
+      button.classList.add(isCorrect ? "is-correct" : "is-incorrect");
+      feedback.classList.toggle("is-correct", isCorrect);
+
+      if (isCorrect) {
+        feedback.textContent = "¡Correcto! Esa es la idea clave.";
+        return;
+      }
+
+      const correctAnswer = Array.from(quizOptions).find(
+        (option) => option.dataset.correct === "true",
+      );
+      feedback.textContent = `No exactamente. La respuesta es: ${correctAnswer.textContent.trim()}.`;
+    });
+  });
 });
