@@ -25,8 +25,8 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     >
-    <link rel="stylesheet" href="styles.css">
-    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/app.js" defer></script>
   </head>
   <body>
     <header class="site-header">
@@ -43,7 +43,7 @@
 
     <main id="inicio">
       <section class="hero-section container py-5">
-        <div class="row align-items-center g-5">
+        <div class="row align-items-center justify-content-between  g-5"  style="width: 100%;">  
           <div class="col-lg-6">
             <p class="eyebrow"><span class="eyebrow-line"></span> FUNDAMENTOS DE SOFTWARE</p>
             <h1>Una arquitectura.<br><span>Dos formas de construir.</span></h1>
@@ -159,8 +159,8 @@
               <span class="concept-number">01 / MONOLITO</span>
               <h3>Una aplicación, un despliegue.</h3>
               <p class="mb-0">
-                Los componentes comparten una misma unidad. Es directo de iniciar,
-                aunque cada parte depende más de las demás.
+                UI, lógica y datos viven en una sola aplicación. Es sencilla de iniciar,
+                pero un cambio suele requerir desplegarla completa.
               </p>
             </article>
           </div>
@@ -169,8 +169,8 @@
               <span class="concept-number">02 / DESACOPLADA</span>
               <h3>Servicios con autonomía.</h3>
               <p class="mb-0">
-                Cada componente puede evolucionar y desplegarse por separado, mientras
-                se comunica con el resto mediante contratos definidos.
+                La aplicación se divide en servicios que se comunican entre sí. Cada
+                servicio puede cambiar y desplegarse de manera independiente.
               </p>
             </article>
           </div>
@@ -181,25 +181,127 @@
         <div class="row justify-content-center">
           <div class="col-lg-10">
             <div class="video-heading text-center mb-4">
-              <p class="eyebrow justify-content-center"><span class="eyebrow-line"></span> SIGUIENTE PASO</p>
-              <h2>Profundiza en el <span>concepto.</span></h2>
+              <p class="eyebrow justify-content-center"><span class="eyebrow-line"></span> VIDEO EXPLICATIVO</p>
+            
             </div>
             <div
               class="ratio ratio-16x9 video-placeholder"
               role="group"
-              aria-label="Espacio reservado para el video explicativo: Monolito vs Desacoplado, próximamente"
+              aria-label="Póster del video explicativo sobre arquitectura monolítica y desacoplada. Video próximamente."
             >
-              <div class="video-content">
+              <img
+                class="video-poster"
+                src="assets/videos/poster.svg"
+                alt="Póster ilustrado: Monolito versus arquitectura desacoplada"
+              >
+              <div class="video-content" aria-hidden="true">
                 <div class="play-button" aria-hidden="true">
                   <i class="bi bi-play-fill"></i>
                 </div>
-                <p class="video-kicker">CONTENIDO EN PREPARACIÓN</p>
-                <h3>Video Explicativo:<br class="d-sm-none"> Monolito vs Desacoplado</h3>
-                <span class="video-coming">PRÓXIMAMENTE</span>
               </div>
               <span class="video-corner corner-top" aria-hidden="true"></span>
               <span class="video-corner corner-bottom" aria-hidden="true"></span>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="preguntas" class="quiz-section container py-5">
+        <div class="quiz-heading text-center mb-4">
+          <p class="eyebrow justify-content-center"><span class="eyebrow-line"></span> REPASO RÁPIDO</p>
+          <h2>¿Qué <span>aprendiste?</span></h2>
+          <p class="section-copy mx-auto mb-0">Tres preguntas por tema para comprobar las ideas clave.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <article class="quiz-card h-100 p-4">
+              <span class="concept-number">MONOLITO / 01</span>
+              <h3>Si actualizas una parte, ¿qué suele desplegarse?</h3>
+              <div class="quiz-options" role="group" aria-label="Pregunta 1 sobre arquitectura monolítica">
+                <button class="quiz-option" type="button" data-quiz="monolith-1" data-correct="false" aria-pressed="false">
+                  Solo esa parte
+                </button>
+                <button class="quiz-option" type="button" data-quiz="monolith-1" data-correct="true" aria-pressed="false">
+                  La aplicación completa
+                </button>
+              </div>
+              <p class="quiz-feedback mb-0" data-feedback="monolith-1" aria-live="polite"></p>
+            </article>
+          </div> 
+          <div class="col-md-6 col-lg-4">
+            <article class="quiz-card h-100 p-4">
+              <span class="concept-number">MONOLITO / 02</span>
+              <h3>¿Dónde viven la interfaz, la lógica y los datos?</h3>
+              <div class="quiz-options" role="group" aria-label="Pregunta 2 sobre arquitectura monolítica">
+                <button class="quiz-option" type="button" data-quiz="monolith-2" data-correct="true" aria-pressed="false">
+                  En una misma aplicación
+                </button>
+                <button class="quiz-option" type="button" data-quiz="monolith-2" data-correct="false" aria-pressed="false">
+                  En servicios totalmente separados
+                </button>
+              </div>
+              <p class="quiz-feedback mb-0" data-feedback="monolith-2" aria-live="polite"></p>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="quiz-card h-100 p-4">
+              <span class="concept-number">MONOLITO / 03</span>
+              <h3>¿Qué ventaja tiene al comenzar un proyecto pequeño?</h3>
+              <div class="quiz-options" role="group" aria-label="Pregunta 3 sobre arquitectura monolítica">
+                <button class="quiz-option" type="button" data-quiz="monolith-3" data-correct="false" aria-pressed="false">
+                  Cada parte se despliega sola
+                </button>
+                <button class="quiz-option" type="button" data-quiz="monolith-3" data-correct="true" aria-pressed="false">
+                  Es simple de desarrollar y desplegar
+                </button>
+              </div>
+              <p class="quiz-feedback mb-0" data-feedback="monolith-3" aria-live="polite"></p>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="quiz-card h-100 p-4">
+              <span class="concept-number">DESACOPLADA / 01</span>
+              <h3>¿Puedes desplegar un servicio sin desplegar los demás?</h3>
+              <div class="quiz-options" role="group" aria-label="Pregunta 1 sobre arquitectura desacoplada">
+                <button class="quiz-option" type="button" data-quiz="decoupled-1" data-correct="true" aria-pressed="false">
+                  Sí, de forma independiente
+                </button>
+                <button class="quiz-option" type="button" data-quiz="decoupled-1" data-correct="false" aria-pressed="false">
+                  No, siempre juntos
+                </button>
+              </div>
+              <p class="quiz-feedback mb-0" data-feedback="decoupled-1" aria-live="polite"></p>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="quiz-card h-100 p-4">
+              <span class="concept-number">DESACOPLADA / 02</span>
+              <h3>¿Cómo se comunican los servicios entre sí?</h3>
+              <div class="quiz-options" role="group" aria-label="Pregunta 2 sobre arquitectura desacoplada">
+                <button class="quiz-option" type="button" data-quiz="decoupled-2" data-correct="false" aria-pressed="false">
+                  No necesitan comunicarse
+                </button>
+                <button class="quiz-option" type="button" data-quiz="decoupled-2" data-correct="true" aria-pressed="false">
+                  Mediante contratos e interfaces
+                </button>
+              </div>
+              <p class="quiz-feedback mb-0" data-feedback="decoupled-2" aria-live="polite"></p>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="quiz-card h-100 p-4">
+              <span class="concept-number">DESACOPLADA / 03</span>
+              <h3>¿Qué permite separar un servicio del resto?</h3>
+              <div class="quiz-options" role="group" aria-label="Pregunta 3 sobre arquitectura desacoplada">
+                <button class="quiz-option" type="button" data-quiz="decoupled-3" data-correct="true" aria-pressed="false">
+                  Cambiarlo con menor impacto en otros
+                </button>
+                <button class="quiz-option" type="button" data-quiz="decoupled-3" data-correct="false" aria-pressed="false">
+                  Eliminar toda comunicación
+                </button>
+              </div>
+              <p class="quiz-feedback mb-0" data-feedback="decoupled-3" aria-live="polite"></p>
+            </article>
           </div>
         </div>
       </section>

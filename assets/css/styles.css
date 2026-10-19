@@ -18,7 +18,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 1.5rem;
+  scroll-padding-top: 6rem;
 }
 
 body {
@@ -45,7 +45,17 @@ button:focus-visible {
 }
 
 .site-header {
+  position: fixed;
+  z-index: 1030;
+  inset: 0 0 auto;
   border-bottom: 1px solid rgba(148, 163, 184, 0.09);
+  background: rgba(11, 15, 25, 0.9);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+main {
+  padding-top: 76px;
 }
 
 .navbar {
@@ -91,6 +101,7 @@ button:focus-visible {
 
 .hero-section {
   min-height: 440px;
+  width: 100%;
   display: flex;
   align-items: center;
 }
@@ -172,6 +183,7 @@ h2 span {
   position: relative;
   display: grid;
   min-height: 290px;
+
   place-items: center;
   overflow: hidden;
 }
@@ -552,6 +564,78 @@ h2 {
   line-height: 1.75;
 }
 
+.quiz-section {
+  padding-top: 2rem !important;
+  padding-bottom: 5rem !important;
+}
+
+.quiz-heading {
+  margin-bottom: 2rem !important;
+}
+
+.quiz-card {
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: linear-gradient(145deg, rgba(22, 31, 48, 0.88), rgba(15, 22, 35, 0.74));
+}
+
+.quiz-card h3 {
+  min-height: 3.25rem;
+  margin-bottom: 1.25rem;
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.quiz-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.quiz-option {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: rgba(11, 15, 25, 0.55);
+  color: var(--color-muted);
+  font: inherit;
+  font-size: 0.8rem;
+  text-align: left;
+  transition: border-color 180ms ease, color 180ms ease, background 180ms ease;
+}
+
+.quiz-option:hover,
+.quiz-option[aria-pressed="true"] {
+  border-color: rgba(0, 210, 255, 0.55);
+  color: var(--color-text);
+}
+
+.quiz-option.is-correct {
+  border-color: var(--color-accent);
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+}
+
+.quiz-option.is-incorrect {
+  border-color: rgba(148, 163, 184, 0.42);
+  background: rgba(148, 163, 184, 0.08);
+  color: var(--color-text);
+}
+
+.quiz-feedback {
+  min-height: 2.5rem;
+  padding-top: 0.8rem;
+  color: var(--color-muted);
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+
+.quiz-feedback.is-correct {
+  color: var(--color-accent);
+}
+
 .video-section {
   padding-top: 2rem !important;
   padding-bottom: 6rem !important;
@@ -562,41 +646,25 @@ h2 {
 }
 
 .video-placeholder {
+  isolation: isolate;
   overflow: hidden;
   border: 1px solid rgba(0, 210, 255, 0.25);
   border-radius: 14px;
-  background:
-    radial-gradient(ellipse at 50% 52%, rgba(0, 110, 150, 0.2), transparent 42%),
-    linear-gradient(135deg, #111b2b, #0b101c 55%, #101b2b);
+  background: #0b101c;
   box-shadow: 0 18px 55px rgba(0, 0, 0, 0.24), inset 0 0 60px rgba(0, 210, 255, 0.035);
 }
 
-.video-placeholder::before,
-.video-placeholder::after {
+.video-poster {
   position: absolute;
-  width: 170px;
-  height: 170px;
-  border: 1px solid rgba(0, 210, 255, 0.08);
-  border-radius: 50%;
-  content: "";
-}
-
-.video-placeholder::before {
-  top: -95px;
-  left: -62px;
-}
-
-.video-placeholder::after {
-  right: -70px;
-  bottom: -105px;
-  width: 240px;
-  height: 240px;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .video-content {
-  z-index: 1;
+  z-index: 2;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 1rem;
@@ -615,29 +683,6 @@ h2 {
   box-shadow: 0 0 30px rgba(0, 210, 255, 0.16);
   color: var(--color-accent);
   font-size: 1.45rem;
-}
-
-.video-kicker {
-  margin-bottom: 0.55rem;
-  color: var(--color-accent);
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-}
-
-.video-content h3 {
-  margin-bottom: 0.9rem;
-  font-size: clamp(1.05rem, 2.7vw, 1.55rem);
-  font-weight: 600;
-}
-
-.video-coming {
-  padding: 0.35rem 0.65rem;
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
-  color: var(--color-muted);
-  font-size: 0.57rem;
-  letter-spacing: 0.15em;
 }
 
 .video-corner {
@@ -693,6 +738,8 @@ h2 {
 @media (max-width: 767.98px) {
   .hero-section {
     min-height: auto;
+    width: 100%;
+    border: 10px solid rgba(246, 249, 249, 0.92);
     padding-top: 3.5rem !important;
   }
 
