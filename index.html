@@ -1,28 +1,219 @@
-<<<<<<< HEAD
-<h1>Iniciando El proyecto</h1>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0b0f19">
+    <meta
+      name="description"
+      content="Explora de forma interactiva las diferencias entre una arquitectura monolítica y una desacoplada."
+    >
+    <title>Arquitectura de software | Monolito vs desacoplada</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    >
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    >
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="navbar container py-3" aria-label="Navegación principal">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#inicio">
+          <span class="brand-mark" aria-hidden="true"><i class="bi bi-boxes"></i></span>
+          <span class="brand-name">ARQ<span>LAB</span></span>
+        </a>
+        <a class="header-link d-none d-sm-inline-flex" href="#video">
+          Explorar contenido <i class="bi bi-arrow-down-right" aria-hidden="true"></i>
+        </a>
+      </nav>
+    </header>
 
-<table border="2">
-=======
-<h1>Qué dices, compa? <u>🤠🤙</u></h1>
+    <main id="inicio">
+      <section class="hero-section container py-5">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <p class="eyebrow"><span class="eyebrow-line"></span> FUNDAMENTOS DE SOFTWARE</p>
+            <h1>Una arquitectura.<br><span>Dos formas de construir.</span></h1>
+            <p class="hero-copy">
+              Descubre cómo se organiza una aplicación y qué cambia cuando sus partes
+              trabajan juntas o de forma independiente.
+            </p>
+            <a class="btn btn-cyan mt-2" href="#laboratorio">
+              Explorar arquitecturas <i class="bi bi-arrow-down-short" aria-hidden="true"></i>
+            </a>
+          </div>
+          <div class="col-lg-6">
+            <div class="hero-visual" aria-hidden="true">
+              <div class="visual-orbit orbit-one"></div>
+              <div class="visual-orbit orbit-two"></div>
+              <div class="visual-core"><i class="bi bi-diagram-3"></i></div>
+              <span class="orbit-label label-top">SYSTEM DESIGN</span>
+              <span class="orbit-label label-bottom">01 — 02</span>
+              <span class="visual-dot dot-one"></span>
+              <span class="visual-dot dot-two"></span>
+            </div>
+          </div>
+        </div>
+      </section>
 
-<table>
->>>>>>> 23c0afb6136bfec2742414b97ce57cd4b8a0052f
-    <thead>
-        <tr>
-            <th>Apellido</th>
-            <th>Nombre</th>
-            <th>Email</th>
-            <th>Dirección</th>
-            <th>Acerca de mí</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Yugsi</td>
-            <td>Kevin</td>
-            <td>kevin@Gmail.com</td>
-            <td>Cotopaxi . Toacazo</td>
-            <td>Especialista en la resolución de problemas que creé al intentar optimizar un sistema</td>
-        </tr>
-    </tbody>
-</table>
+      <section id="laboratorio" class="lab-section py-5">
+        <div class="container py-lg-4">
+          <div class="row justify-content-between align-items-end g-4 mb-4">
+            <div class="col-lg-7">
+              <p class="eyebrow"><span class="eyebrow-line"></span> LABORATORIO INTERACTIVO</p>
+              <h2>La estructura <span>en movimiento.</span></h2>
+              <p class="section-copy mb-0">
+                Cambia de arquitectura y observa cómo se transforma la relación entre
+                los componentes.
+              </p>
+            </div>
+            <div class="col-lg-auto">
+              <div class="architecture-toggle btn-group" role="group" aria-label="Seleccionar arquitectura">
+                <button
+                  class="btn btn-outline-info architecture-button is-active"
+                  type="button"
+                  data-architecture="monolith"
+                  aria-pressed="true"
+                >
+                  <i class="bi bi-box" aria-hidden="true"></i> Monolito
+                </button>
+                <button
+                  class="btn btn-outline-info architecture-button"
+                  type="button"
+                  data-architecture="decoupled"
+                  aria-pressed="false"
+                >
+                  <i class="bi bi-diagram-3" aria-hidden="true"></i> Desacoplada
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="architecture-panel">
+            <div class="panel-topline">
+              <span><span class="status-dot"></span> VISTA DEL SISTEMA</span>
+              <span class="panel-index">ARQ / <span id="architecture-index">01</span></span>
+            </div>
+            <div
+              id="architecture-stage"
+              class="architecture-stage is-monolith"
+              data-architecture="monolith"
+              role="img"
+              aria-label="Arquitectura monolítica: interfaz, lógica y datos integrados en un solo bloque"
+            >
+              <div class="architecture-canvas">
+                <div class="architecture-node node-ui">
+                  <span class="node-icon"><i class="bi bi-window-stack" aria-hidden="true"></i></span>
+                  <span class="node-name">UI</span>
+                  <span class="node-detail">Interfaz</span>
+                </div>
+                <div class="architecture-node node-logic">
+                  <span class="node-icon"><i class="bi bi-cpu" aria-hidden="true"></i></span>
+                  <span class="node-name">Lógica</span>
+                  <span class="node-detail">Procesamiento</span>
+                </div>
+                <div class="architecture-node node-data">
+                  <span class="node-icon"><i class="bi bi-database" aria-hidden="true"></i></span>
+                  <span class="node-name">Datos</span>
+                  <span class="node-detail">Persistencia</span>
+                </div>
+                <span class="connector connector-one" aria-hidden="true"></span>
+                <span class="connector connector-two" aria-hidden="true"></span>
+              </div>
+            </div>
+            <div class="panel-caption row g-3 align-items-center">
+              <div class="col-md-7">
+                <h3 id="architecture-title">Todo en una sola unidad.</h3>
+                <p id="architecture-description" class="mb-0">
+                  La interfaz, la lógica y los datos forman una aplicación integrada.
+                  Un cambio puede afectar al sistema completo.
+                </p>
+              </div>
+              <div class="col-md-5 text-md-end">
+                <span class="architecture-tag" id="architecture-tag">
+                  <i class="bi bi-link-45deg" aria-hidden="true"></i> COMPONENTES ACOPLADOS
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="concepts-section container py-5">
+        <div class="row g-4">
+          <div class="col-md-6">
+            <article class="concept-card h-100 p-4">
+              <span class="concept-number">01 / MONOLITO</span>
+              <h3>Una aplicación, un despliegue.</h3>
+              <p class="mb-0">
+                Los componentes comparten una misma unidad. Es directo de iniciar,
+                aunque cada parte depende más de las demás.
+              </p>
+            </article>
+          </div>
+          <div class="col-md-6">
+            <article class="concept-card h-100 p-4">
+              <span class="concept-number">02 / DESACOPLADA</span>
+              <h3>Servicios con autonomía.</h3>
+              <p class="mb-0">
+                Cada componente puede evolucionar y desplegarse por separado, mientras
+                se comunica con el resto mediante contratos definidos.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="video" class="video-section container py-5">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="video-heading text-center mb-4">
+              <p class="eyebrow justify-content-center"><span class="eyebrow-line"></span> SIGUIENTE PASO</p>
+              <h2>Profundiza en el <span>concepto.</span></h2>
+            </div>
+            <div
+              class="ratio ratio-16x9 video-placeholder"
+              role="group"
+              aria-label="Espacio reservado para el video explicativo: Monolito vs Desacoplado, próximamente"
+            >
+              <div class="video-content">
+                <div class="play-button" aria-hidden="true">
+                  <i class="bi bi-play-fill"></i>
+                </div>
+                <p class="video-kicker">CONTENIDO EN PREPARACIÓN</p>
+                <h3>Video Explicativo:<br class="d-sm-none"> Monolito vs Desacoplado</h3>
+                <span class="video-coming">PRÓXIMAMENTE</span>
+              </div>
+              <span class="video-corner corner-top" aria-hidden="true"></span>
+              <span class="video-corner corner-bottom" aria-hidden="true"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer container py-4">
+      <span>ARQLAB <span class="footer-divider">/</span> ARQUITECTURA DE SOFTWARE</span>
+      <a href="#inicio">Volver arriba <i class="bi bi-arrow-up" aria-hidden="true"></i></a>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
